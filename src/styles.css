@@ -1,0 +1,309 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F8F4E1;
+  color: #444;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+/*header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #704c24;
+  padding: 16px 32px;
+  color: white;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 17px;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #ffe1b3; 
+}
+
+main#main-content {
+  view-transition-name: main-content;
+}
+::view-transition-old(main-content),
+::view-transition-new(main-content) {
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+/* ==== CONTAINER CERITA ==== */
+#home h2{
+  color:#704c24;
+}
+
+#storyContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+/* ==== KARTU CERITA ==== */
+.story-item {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 280px;
+}
+
+.story-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== GAMBAR ==== */
+.story-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+
+/* ==== JUDUL ==== */
+.story-item h3 {
+  font-size: 18px;
+  margin: 6px 0 2px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* ==== DESKRIPSI DAN TANGGAL ==== */
+.story-item p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+/* ==== KOORDINAT ==== */
+.story-item small {
+  font-size: 12px;
+  color: #777;
+  margin-top: auto;
+}
+
+/* ==== FORM CERITA ==== */
+#storyForm {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 520px;
+  margin: 40px auto;
+  box-shadow:  0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#storyForm label {
+  font-weight: 600;
+  color: #000;
+  display: block;
+  margin-bottom: 8px;
+}
+
+#storyForm input,
+#storyForm textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 16px;
+}
+
+#storyForm input:focus,
+#storyForm textarea:focus {
+  border-color: #704c24;
+  box-shadow: 0 0 8px rgba(255, 182, 193, 0.3);
+  outline: none;
+}
+
+
+#storyForm button[type="submit"] {
+  background: #704c24;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  width: 100%;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+#storyForm button[type="submit"]:hover {
+  transform: scale(1.05);
+}
+
+/* ==== CAMERA BUTTONS ==== */
+#startCamera,
+#takePhoto,
+#stopCamera {
+  background: #704c24;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+  margin: 8px 4px;
+}
+
+#startCamera:hover,
+#takePhoto:hover,
+#stopCamera:hover {
+  transform: scale(1.05);
+}
+
+/* ==== PREVIEW ==== */
+#cameraPreview,
+#photoPreview {
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.2);
+  display: block;
+}
+
+/* ==== LOGIN ==== */
+section#form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.2);
+}
+
+h2 {
+  text-align: center;
+  color: #704c24;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  margin-top: 30px;
+  background-color: #704c24;
+  color: white;
+  font-weight: bold;
+  border-radius: 14px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #382713;
+}
+
+#loginMessage {
+  color: #66bb6a;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* loader */
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* footer */
+.footer {
+  background-color: #74512D;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: auto;
+}
+
+/* ==== SKIP TO CONTENT ==== */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 12px 18px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+  transform: translateY(0);   
+}
+
