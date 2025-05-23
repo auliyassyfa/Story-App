@@ -43,6 +43,19 @@ registerRoute(
   }),
 );
 
+// Caching semua gambar eksternal lainnya (misal: dari CDN, blob, dsb)
+registerRoute(
+  ({ request }) => request.destination === 'image',
+  new StaleWhileRevalidate({
+    cacheName: 'external-images',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  }),
+);
+
 // Caching tiles peta OSM
 registerRoute(
   ({ url }) => url.origin === 'https://c.tile.openstreetmap.org',

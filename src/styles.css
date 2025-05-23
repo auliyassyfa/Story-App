@@ -56,6 +56,7 @@ main#main-content {
 /* ==== CONTAINER CERITA ==== */
 #home h2{
   color:#704c24;
+  font-size:xx-large;
 }
 
 #storyContainer {
@@ -66,6 +67,47 @@ main#main-content {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 16px;
+}
+
+.story-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tombol tambah cerita */
+.add-story-button {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: #57e35c;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-story-button:hover {
+  background-color: #4ab84e;
+}
+
+/* halaman bookmark */
+.savedStoriesSection {
+  padding: 1rem 2rem;
+  background-color: #fefae0;
+}
+
+.savedStoriesSection h2 {
+  text-align: center;
+  color: #5a381e;
+  margin-bottom: 1.5rem;
+}
+
+#savedStoriesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 /* ==== KARTU CERITA ==== */
@@ -89,7 +131,8 @@ main#main-content {
 /* ==== GAMBAR ==== */
 .story-item img {
   width: 100%;
-  height: 160px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
   background-color: #f0f0f0;
@@ -116,6 +159,55 @@ main#main-content {
   color: #777;
   margin-top: auto;
 }
+
+/* bookmark */
+.bookmark-button {
+  margin-top: auto;
+  background-color: #fdd835;
+  border: none;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.bookmark-button:hover {
+  background-color: #fbc02d;
+  transform: translateY(-2px);
+}
+
+.bookmark-button:active {
+  background-color: #f9a825;
+  transform: scale(0.98);
+}
+
+/* delete button */
+.delete-button {
+  margin-top: auto;
+  background-color: #ff1f1f; 
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #e01d1d;
+  transform: translateY(-2px);
+}
+
+.delete-button:active {
+  background-color: #e01d1d;
+  transform: scale(0.98);
+}
+
 
 /* ==== FORM CERITA ==== */
 #storyForm {
@@ -277,7 +369,6 @@ button[type="submit"]:hover {
   display: none;
 }
 
-
 /* footer */
 .footer {
   background-color: #74512D;
@@ -291,7 +382,7 @@ button[type="submit"]:hover {
 /* ==== SKIP TO CONTENT ==== */
 .skip-to-content {
   position: absolute;
-  top: -40px;
+  top: -80px;
   left: 0;
   background: #000;
   color: #fff;

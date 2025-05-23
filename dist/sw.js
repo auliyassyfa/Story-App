@@ -5895,7 +5895,7 @@ __webpack_require__.r(__webpack_exports__);
 const BASE_URL = 'https://story-api.dicoding.dev/v1';
 
 // Do precaching
-(0,workbox_precaching__WEBPACK_IMPORTED_MODULE_0__.precacheAndRoute)([{'revision':null,'url':'78ea8c65cea28287bd90.png'},{'revision':null,'url':'83e70a079ed6ad01f44d.png'},{'revision':null,'url':'bf804537a8c269bb5df0.png'},{'revision':'39f967969c7875410d103fb7f5b54b80','url':'bundle.js'},{'revision':'21a0a0a9b1fdb78eae4c9d97f7e90078','url':'favicon.png'},{'revision':null,'url':'images/layers-2x.8f2c4d11474275fbc1614b9098334eae.png'},{'revision':null,'url':'images/layers.416d91365b44e4b4f4777663e6f009f3.png'},{'revision':'ac73f380ba0147f4fa5951dfaba2a665','url':'images/logo.png'},{'revision':null,'url':'images/marker-icon-2x.680f69f3c2e6b90c1812a813edf67fd7.png'},{'revision':null,'url':'images/marker-icon.2b3e1faf89f94a4835397e7a43b4f77d.png'},{'revision':null,'url':'images/marker-shadow.a0c6cc1401c107b501efee6477816891.png'},{'revision':'2b2e3c4db61ec934093957e8fe925fde','url':'index.html'},{'revision':'47486762045ff17776cfe19edf700e5c','url':'manifest.json'}]);
+(0,workbox_precaching__WEBPACK_IMPORTED_MODULE_0__.precacheAndRoute)([{'revision':null,'url':'78ea8c65cea28287bd90.png'},{'revision':null,'url':'83e70a079ed6ad01f44d.png'},{'revision':null,'url':'bf804537a8c269bb5df0.png'},{'revision':'a51d892f30247231a366e9776aac8214','url':'bundle.js'},{'revision':'21a0a0a9b1fdb78eae4c9d97f7e90078','url':'favicon.png'},{'revision':null,'url':'images/layers-2x.8f2c4d11474275fbc1614b9098334eae.png'},{'revision':null,'url':'images/layers.416d91365b44e4b4f4777663e6f009f3.png'},{'revision':'ac73f380ba0147f4fa5951dfaba2a665','url':'images/logo.png'},{'revision':null,'url':'images/marker-icon-2x.680f69f3c2e6b90c1812a813edf67fd7.png'},{'revision':null,'url':'images/marker-icon.2b3e1faf89f94a4835397e7a43b4f77d.png'},{'revision':null,'url':'images/marker-shadow.a0c6cc1401c107b501efee6477816891.png'},{'revision':'6fe54af022bb5ed27132f65798f761b0','url':'index.html'},{'revision':'47486762045ff17776cfe19edf700e5c','url':'manifest.json'}]);
 
 // Navigation fallback untuk SPA (Single Page App)
 const handler = (0,workbox_precaching__WEBPACK_IMPORTED_MODULE_0__.createHandlerBoundToURL)('/index.html');
@@ -5924,6 +5924,19 @@ const navigationRoute = new workbox_routing__WEBPACK_IMPORTED_MODULE_1__.Navigat
   },
   new workbox_strategies__WEBPACK_IMPORTED_MODULE_3__.StaleWhileRevalidate({
     cacheName: 'story-api-images',
+    plugins: [
+      new workbox_cacheable_response__WEBPACK_IMPORTED_MODULE_2__.CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  }),
+);
+
+// Caching semua gambar eksternal lainnya (misal: dari CDN, blob, dsb)
+(0,workbox_routing__WEBPACK_IMPORTED_MODULE_1__.registerRoute)(
+  ({ request }) => request.destination === 'image',
+  new workbox_strategies__WEBPACK_IMPORTED_MODULE_3__.StaleWhileRevalidate({
+    cacheName: 'external-images',
     plugins: [
       new workbox_cacheable_response__WEBPACK_IMPORTED_MODULE_2__.CacheableResponsePlugin({
         statuses: [0, 200],

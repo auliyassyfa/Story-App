@@ -4,6 +4,14 @@ import { subscribePushNotification } from './utils/notification-helper.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   Router.init();
+
+    window.addEventListener('hashchange', () => {
+    if (window.currentAddStoryPresenter) {
+      console.log('[GLOBAL] hashchange: Mematikan kamera');
+      window.currentAddStoryPresenter.destroy();
+      window.currentAddStoryPresenter = null;
+    }
+  });
 });
 
 if ('serviceWorker' in navigator) {

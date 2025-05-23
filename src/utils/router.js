@@ -2,6 +2,7 @@ import HomePage from '../views/pages/HomePage.js';
 import AddStoryPage from '../views/pages/AddStoryPage.js';
 import LoginPage from '../views/pages/LoginPage.js';
 import RegisterPage from '../views/pages/RegisterPage.js';
+import SavedStoriesPage from '../views/pages/savedStories.js';
 
 
 const routes = {
@@ -9,6 +10,7 @@ const routes = {
   '/add-story': AddStoryPage,
   '/login': LoginPage,
   '/register': RegisterPage,
+  '/saved-book': SavedStoriesPage,
 };
 
 const Router = {

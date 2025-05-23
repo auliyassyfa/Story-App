@@ -3,19 +3,28 @@ import StoryView from '../StoryView.js';
 import StoryPresenter from '../../presenters/StoryPresenter.js';
 import StoryDB from '../../data/story-db.js';
 
-
 const HomePage = {
   async render() {
     return `
-      <section id="home" class="page-enter">
-        <h2>Daftar Cerita</h2>
-        <div id="storyContainer"></div>
-        <div id="map" style="height: 400px;"></div>
-      </section>
+    <section id="home" class="page-enter">
+      <h2 class="home-title">Daftar Cerita</h2>
+      
+      <div class="story-header">
+        <button id="addStoryButton" class="add-story-button">➕ Add Story</button>
+      </div>
+
+      <div id="storyContainer" class="story-grid"></div>
+
+      <div id="map" style="height: 400px;"></div>
+    </section>
     `;
   },
 
   async afterRender() {
+    document.getElementById('addStoryButton').addEventListener('click', () => {
+      window.location.hash = '#/add-story'; // sesuaikan jika rutenya lain
+    });
+
     const token = localStorage.getItem("token");
   
     const section = document.getElementById('home');

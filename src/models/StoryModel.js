@@ -4,6 +4,10 @@ class StoryModel {
     this.baseUrl = baseUrl;
   }
 
+  getToken() {
+        return localStorage.getItem('token');
+      }
+
   async fetchStories(token) {
     try {
       const response = await fetch(`${this.baseUrl}/stories`, {

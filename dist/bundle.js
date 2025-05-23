@@ -776,6 +776,7 @@ main#main-content {
 /* ==== CONTAINER CERITA ==== */
 #home h2{
   color:#704c24;
+  font-size:xx-large;
 }
 
 #storyContainer {
@@ -786,6 +787,47 @@ main#main-content {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 16px;
+}
+
+.story-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tombol tambah cerita */
+.add-story-button {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: #57e35c;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-story-button:hover {
+  background-color: #4ab84e;
+}
+
+/* halaman bookmark */
+.savedStoriesSection {
+  padding: 1rem 2rem;
+  background-color: #fefae0;
+}
+
+.savedStoriesSection h2 {
+  text-align: center;
+  color: #5a381e;
+  margin-bottom: 1.5rem;
+}
+
+#savedStoriesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 /* ==== KARTU CERITA ==== */
@@ -809,7 +851,8 @@ main#main-content {
 /* ==== GAMBAR ==== */
 .story-item img {
   width: 100%;
-  height: 160px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
   background-color: #f0f0f0;
@@ -836,6 +879,55 @@ main#main-content {
   color: #777;
   margin-top: auto;
 }
+
+/* bookmark */
+.bookmark-button {
+  margin-top: auto;
+  background-color: #fdd835;
+  border: none;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.bookmark-button:hover {
+  background-color: #fbc02d;
+  transform: translateY(-2px);
+}
+
+.bookmark-button:active {
+  background-color: #f9a825;
+  transform: scale(0.98);
+}
+
+/* delete button */
+.delete-button {
+  margin-top: auto;
+  background-color: #ff1f1f; 
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #e01d1d;
+  transform: translateY(-2px);
+}
+
+.delete-button:active {
+  background-color: #e01d1d;
+  transform: scale(0.98);
+}
+
 
 /* ==== FORM CERITA ==== */
 #storyForm {
@@ -997,7 +1089,6 @@ button[type="submit"]:hover {
   display: none;
 }
 
-
 /* footer */
 .footer {
   background-color: #74512D;
@@ -1011,7 +1102,7 @@ button[type="submit"]:hover {
 /* ==== SKIP TO CONTENT ==== */
 .skip-to-content {
   position: absolute;
-  top: -40px;
+  top: -80px;
   left: 0;
   background: #000;
   color: #fff;
@@ -1027,7 +1118,7 @@ button[type="submit"]:hover {
   transform: translateY(0);   
 }
 
-`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"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","sourcesContent":["body {\r\n  font-family: 'Arial', sans-serif;\r\n  background-color: #F8F4E1;\r\n  color: #444;\r\n  margin: 0;\r\n  padding: 0;\r\n  line-height: 1.6;\r\n  display: flex;\r\n  flex-direction: column;\r\n  min-height: 100vh; \r\n}\r\n\r\n/*header */\r\nheader {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  background-color: #704c24;\r\n  padding: 16px 32px;\r\n  color: white;\r\n  flex-wrap: wrap;\r\n}\r\n\r\nheader h1 {\r\n  font-size: 24px;\r\n  margin: 0;\r\n}\r\n\r\n\r\nnav {\r\n  display: flex;\r\n  gap: 24px;\r\n}\r\n\r\nnav a {\r\n  color: #fff;\r\n  text-decoration: none;\r\n  font-weight: 500;\r\n  font-size: 17px;\r\n  transition: color 0.2s ease;\r\n}\r\n\r\nnav a:hover {\r\n  color: #ffe1b3; \r\n}\r\n\r\nmain#main-content {\r\n  view-transition-name: main-content;\r\n}\r\n::view-transition-old(main-content),\r\n::view-transition-new(main-content) {\r\n  animation-duration: 300ms;\r\n  animation-timing-function: ease-in-out;\r\n}\r\n\r\n/* ==== CONTAINER CERITA ==== */\r\n#home h2{\r\n  color:#704c24;\r\n}\r\n\r\n#storyContainer {\r\n  display: grid;\r\n  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\r\n  gap: 20px;\r\n  width: 100%;\r\n  max-width: 1200px;\r\n  margin: 40px auto;\r\n  padding: 0 16px;\r\n}\r\n\r\n/* ==== KARTU CERITA ==== */\r\n.story-item {\r\n  background: #ffffff;\r\n  border-radius: 14px;\r\n  padding: 14px;\r\n  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);\r\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 6px;\r\n  min-height: 280px;\r\n}\r\n\r\n.story-item:hover {\r\n  transform: translateY(-3px);\r\n  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n/* ==== GAMBAR ==== */\r\n.story-item img {\r\n  width: 100%;\r\n  height: 160px;\r\n  object-fit: cover;\r\n  border-radius: 10px;\r\n  background-color: #f0f0f0;\r\n}\r\n\r\n/* ==== JUDUL ==== */\r\n.story-item h3 {\r\n  font-size: 18px;\r\n  margin: 6px 0 2px;\r\n  color: #333;\r\n  font-weight: 700;\r\n}\r\n\r\n/* ==== DESKRIPSI DAN TANGGAL ==== */\r\n.story-item p {\r\n  font-size: 14px;\r\n  color: #555;\r\n  margin: 0;\r\n}\r\n\r\n/* ==== KOORDINAT ==== */\r\n.story-item small {\r\n  font-size: 12px;\r\n  color: #777;\r\n  margin-top: auto;\r\n}\r\n\r\n/* ==== FORM CERITA ==== */\r\n#storyForm {\r\n  background: #fff;\r\n  padding: 30px;\r\n  border-radius: 12px;\r\n  max-width: 520px;\r\n  margin: 40px auto;\r\n  box-shadow:  0 4px 12px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n#storyForm label {\r\n  font-weight: 600;\r\n  color: #000;\r\n  display: block;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n#storyForm input,\r\n#storyForm textarea {\r\n  width: 100%;\r\n  border: 1px solid #ccc;\r\n  border-radius: 8px;\r\n  font-size: 15px;\r\n  padding: 10px;\r\n  margin-bottom: 16px;\r\n}\r\n\r\n#storyForm input:focus,\r\n#storyForm textarea:focus {\r\n  border-color: #704c24;\r\n  box-shadow: 0 0 8px rgba(255, 182, 193, 0.3);\r\n  outline: none;\r\n}\r\n\r\n\r\n#storyForm button[type=\"submit\"] {\r\n  background: #704c24;\r\n  color: white;\r\n  padding: 12px;\r\n  font-size: 16px;\r\n  border: none;\r\n  width: 100%;\r\n  border-radius: 14px;\r\n  cursor: pointer;\r\n  transition: transform 0.2s ease-in-out;\r\n}\r\n\r\n#storyForm button[type=\"submit\"]:hover {\r\n  transform: scale(1.05);\r\n}\r\n\r\n/* ==== CAMERA BUTTONS ==== */\r\n#startCamera,\r\n#takePhoto,\r\n#stopCamera {\r\n  background: #704c24;\r\n  color: white;\r\n  font-weight: bold;\r\n  border: none;\r\n  padding: 10px 10px;\r\n  border-radius: 8px;\r\n  margin: 8px 4px;\r\n}\r\n\r\n#startCamera:hover,\r\n#takePhoto:hover,\r\n#stopCamera:hover {\r\n  transform: scale(1.05);\r\n}\r\n\r\n/* ==== PREVIEW ==== */\r\n#cameraPreview,\r\n#photoPreview {\r\n  max-width: 400px;\r\n  margin: 20px auto;\r\n  border-radius: 20px;\r\n  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.2);\r\n  display: block;\r\n}\r\n\r\n/* ==== LOGIN ==== */\r\nsection#form {\r\n  background: #fff;\r\n  padding: 20px;\r\n  border-radius: 12px;\r\n  max-width: 500px;\r\n  margin: 40px auto;\r\n  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.2);\r\n}\r\n\r\nh2 {\r\n  text-align: center;\r\n  color: #704c24;\r\n  margin-bottom: 1.5rem;\r\n}\r\n\r\ninput[type=\"text\"],\r\ninput[type=\"email\"],\r\ninput[type=\"password\"] {\r\n  border: 1px solid #ccc;\r\n  border-radius: 12px;\r\n  padding: 10px;\r\n  width: 100%;\r\n  box-sizing: border-box;\r\n  font-size: 1rem;\r\n}\r\n\r\nbutton[type=\"submit\"] {\r\n  margin-top: 30px;\r\n  background-color: #704c24;\r\n  color: white;\r\n  font-weight: bold;\r\n  border-radius: 14px;\r\n  padding: 10px;\r\n  width: 100%;\r\n  border: none;\r\n  transition: 0.3s;\r\n}\r\n\r\nbutton[type=\"submit\"]:hover {\r\n  background-color: #382713;\r\n}\r\n\r\n#loginMessage {\r\n  color: #66bb6a;\r\n  text-align: center;\r\n  margin-top: 1rem;\r\n  font-weight: bold;\r\n}\r\n\r\n/* loader */\r\n.loading-overlay {\r\n  position: fixed;\r\n  top: 0; left: 0;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  background-color: rgba(255,255,255,0.8);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  z-index: 9999;\r\n}\r\n\r\n.spinner {\r\n  width: 50px;\r\n  height: 50px;\r\n  border: 6px solid #ccc;\r\n  border-top-color: #333;\r\n  border-radius: 50%;\r\n  animation: spin 1s linear infinite;\r\n}\r\n\r\n@keyframes spin {\r\n  to { transform: rotate(360deg); }\r\n}\r\n\r\n.hidden {\r\n  display: none;\r\n}\r\n\r\n\r\n/* footer */\r\n.footer {\r\n  background-color: #74512D;\r\n  text-align: center;\r\n  padding: 1rem;\r\n  font-size: 0.9rem;\r\n  color: #fff;\r\n  margin-top: auto;\r\n}\r\n\r\n/* ==== SKIP TO CONTENT ==== */\r\n.skip-to-content {\r\n  position: absolute;\r\n  top: -40px;\r\n  left: 0;\r\n  background: #000;\r\n  color: #fff;\r\n  padding: 12px 18px;\r\n  z-index: 1000;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n  transition: transform 0.3s ease;\r\n}\r\n\r\n.skip-to-content:focus {\r\n  top: 0;\r\n  transform: translateY(0);   \r\n}\r\n\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"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","sourcesContent":["body {\r\n  font-family: 'Arial', sans-serif;\r\n  background-color: #F8F4E1;\r\n  color: #444;\r\n  margin: 0;\r\n  padding: 0;\r\n  line-height: 1.6;\r\n  display: flex;\r\n  flex-direction: column;\r\n  min-height: 100vh; \r\n}\r\n\r\n/*header */\r\nheader {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  background-color: #704c24;\r\n  padding: 16px 32px;\r\n  color: white;\r\n  flex-wrap: wrap;\r\n}\r\n\r\nheader h1 {\r\n  font-size: 24px;\r\n  margin: 0;\r\n}\r\n\r\n\r\nnav {\r\n  display: flex;\r\n  gap: 24px;\r\n}\r\n\r\nnav a {\r\n  color: #fff;\r\n  text-decoration: none;\r\n  font-weight: 500;\r\n  font-size: 17px;\r\n  transition: color 0.2s ease;\r\n}\r\n\r\nnav a:hover {\r\n  color: #ffe1b3; \r\n}\r\n\r\nmain#main-content {\r\n  view-transition-name: main-content;\r\n}\r\n::view-transition-old(main-content),\r\n::view-transition-new(main-content) {\r\n  animation-duration: 300ms;\r\n  animation-timing-function: ease-in-out;\r\n}\r\n\r\n/* ==== CONTAINER CERITA ==== */\r\n#home h2{\r\n  color:#704c24;\r\n  font-size:xx-large;\r\n}\r\n\r\n#storyContainer {\r\n  display: grid;\r\n  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\r\n  gap: 20px;\r\n  width: 100%;\r\n  max-width: 1200px;\r\n  margin: 40px auto;\r\n  padding: 0 16px;\r\n}\r\n\r\n.story-header {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n/* Tombol tambah cerita */\r\n.add-story-button {\r\n  text-align: center;\r\n  padding: 0.5rem 1rem;\r\n  background-color: #57e35c;\r\n  color: black;\r\n  border: none;\r\n  border-radius: 8px;\r\n  cursor: pointer;\r\n  font-weight: bold;\r\n  transition: background-color 0.3s ease;\r\n}\r\n\r\n.add-story-button:hover {\r\n  background-color: #4ab84e;\r\n}\r\n\r\n/* halaman bookmark */\r\n.savedStoriesSection {\r\n  padding: 1rem 2rem;\r\n  background-color: #fefae0;\r\n}\r\n\r\n.savedStoriesSection h2 {\r\n  text-align: center;\r\n  color: #5a381e;\r\n  margin-bottom: 1.5rem;\r\n}\r\n\r\n#savedStoriesList {\r\n  display: grid;\r\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\r\n  gap: 1.5rem;\r\n}\r\n\r\n/* ==== KARTU CERITA ==== */\r\n.story-item {\r\n  background: #ffffff;\r\n  border-radius: 14px;\r\n  padding: 14px;\r\n  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);\r\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 6px;\r\n  min-height: 280px;\r\n}\r\n\r\n.story-item:hover {\r\n  transform: translateY(-3px);\r\n  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n/* ==== GAMBAR ==== */\r\n.story-item img {\r\n  width: 100%;\r\n  max-width: 100%;\r\n  height: auto;\r\n  object-fit: cover;\r\n  border-radius: 10px;\r\n  background-color: #f0f0f0;\r\n}\r\n\r\n/* ==== JUDUL ==== */\r\n.story-item h3 {\r\n  font-size: 18px;\r\n  margin: 6px 0 2px;\r\n  color: #333;\r\n  font-weight: 700;\r\n}\r\n\r\n/* ==== DESKRIPSI DAN TANGGAL ==== */\r\n.story-item p {\r\n  font-size: 14px;\r\n  color: #555;\r\n  margin: 0;\r\n}\r\n\r\n/* ==== KOORDINAT ==== */\r\n.story-item small {\r\n  font-size: 12px;\r\n  color: #777;\r\n  margin-top: auto;\r\n}\r\n\r\n/* bookmark */\r\n.bookmark-button {\r\n  margin-top: auto;\r\n  background-color: #fdd835;\r\n  border: none;\r\n  color: #333;\r\n  padding: 8px 16px;\r\n  border-radius: 8px;\r\n  font-size: 1rem;\r\n  font-weight: bold;\r\n  cursor: pointer;\r\n  transition: background-color 0.3s ease, transform 0.2s ease;\r\n}\r\n\r\n.bookmark-button:hover {\r\n  background-color: #fbc02d;\r\n  transform: translateY(-2px);\r\n}\r\n\r\n.bookmark-button:active {\r\n  background-color: #f9a825;\r\n  transform: scale(0.98);\r\n}\r\n\r\n/* delete button */\r\n.delete-button {\r\n  margin-top: auto;\r\n  background-color: #ff1f1f; \r\n  border: none;\r\n  color: #fff;\r\n  padding: 8px 16px;\r\n  border-radius: 8px;\r\n  font-size: 1rem;\r\n  font-weight: bold;\r\n  cursor: pointer;\r\n  transition: background-color 0.3s ease, transform 0.2s ease;\r\n}\r\n\r\n.delete-button:hover {\r\n  background-color: #e01d1d;\r\n  transform: translateY(-2px);\r\n}\r\n\r\n.delete-button:active {\r\n  background-color: #e01d1d;\r\n  transform: scale(0.98);\r\n}\r\n\r\n\r\n/* ==== FORM CERITA ==== */\r\n#storyForm {\r\n  background: #fff;\r\n  padding: 30px;\r\n  border-radius: 12px;\r\n  max-width: 520px;\r\n  margin: 40px auto;\r\n  box-shadow:  0 4px 12px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n#storyForm label {\r\n  font-weight: 600;\r\n  color: #000;\r\n  display: block;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n#storyForm input,\r\n#storyForm textarea {\r\n  width: 100%;\r\n  border: 1px solid #ccc;\r\n  border-radius: 8px;\r\n  font-size: 15px;\r\n  padding: 10px;\r\n  margin-bottom: 16px;\r\n}\r\n\r\n#storyForm input:focus,\r\n#storyForm textarea:focus {\r\n  border-color: #704c24;\r\n  box-shadow: 0 0 8px rgba(255, 182, 193, 0.3);\r\n  outline: none;\r\n}\r\n\r\n\r\n#storyForm button[type=\"submit\"] {\r\n  background: #704c24;\r\n  color: white;\r\n  padding: 12px;\r\n  font-size: 16px;\r\n  border: none;\r\n  width: 100%;\r\n  border-radius: 14px;\r\n  cursor: pointer;\r\n  transition: transform 0.2s ease-in-out;\r\n}\r\n\r\n#storyForm button[type=\"submit\"]:hover {\r\n  transform: scale(1.05);\r\n}\r\n\r\n/* ==== CAMERA BUTTONS ==== */\r\n#startCamera,\r\n#takePhoto,\r\n#stopCamera {\r\n  background: #704c24;\r\n  color: white;\r\n  font-weight: bold;\r\n  border: none;\r\n  padding: 10px 10px;\r\n  border-radius: 8px;\r\n  margin: 8px 4px;\r\n}\r\n\r\n#startCamera:hover,\r\n#takePhoto:hover,\r\n#stopCamera:hover {\r\n  transform: scale(1.05);\r\n}\r\n\r\n/* ==== PREVIEW ==== */\r\n#cameraPreview,\r\n#photoPreview {\r\n  max-width: 400px;\r\n  margin: 20px auto;\r\n  border-radius: 20px;\r\n  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.2);\r\n  display: block;\r\n}\r\n\r\n/* ==== LOGIN ==== */\r\nsection#form {\r\n  background: #fff;\r\n  padding: 20px;\r\n  border-radius: 12px;\r\n  max-width: 500px;\r\n  margin: 40px auto;\r\n  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.2);\r\n}\r\n\r\nh2 {\r\n  text-align: center;\r\n  color: #704c24;\r\n  margin-bottom: 1.5rem;\r\n}\r\n\r\ninput[type=\"text\"],\r\ninput[type=\"email\"],\r\ninput[type=\"password\"] {\r\n  border: 1px solid #ccc;\r\n  border-radius: 12px;\r\n  padding: 10px;\r\n  width: 100%;\r\n  box-sizing: border-box;\r\n  font-size: 1rem;\r\n}\r\n\r\nbutton[type=\"submit\"] {\r\n  margin-top: 30px;\r\n  background-color: #704c24;\r\n  color: white;\r\n  font-weight: bold;\r\n  border-radius: 14px;\r\n  padding: 10px;\r\n  width: 100%;\r\n  border: none;\r\n  transition: 0.3s;\r\n}\r\n\r\nbutton[type=\"submit\"]:hover {\r\n  background-color: #382713;\r\n}\r\n\r\n#loginMessage {\r\n  color: #66bb6a;\r\n  text-align: center;\r\n  margin-top: 1rem;\r\n  font-weight: bold;\r\n}\r\n\r\n/* loader */\r\n.loading-overlay {\r\n  position: fixed;\r\n  top: 0; left: 0;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  background-color: rgba(255,255,255,0.8);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  z-index: 9999;\r\n}\r\n\r\n.spinner {\r\n  width: 50px;\r\n  height: 50px;\r\n  border: 6px solid #ccc;\r\n  border-top-color: #333;\r\n  border-radius: 50%;\r\n  animation: spin 1s linear infinite;\r\n}\r\n\r\n@keyframes spin {\r\n  to { transform: rotate(360deg); }\r\n}\r\n\r\n.hidden {\r\n  display: none;\r\n}\r\n\r\n/* footer */\r\n.footer {\r\n  background-color: #74512D;\r\n  text-align: center;\r\n  padding: 1rem;\r\n  font-size: 0.9rem;\r\n  color: #fff;\r\n  margin-top: auto;\r\n}\r\n\r\n/* ==== SKIP TO CONTENT ==== */\r\n.skip-to-content {\r\n  position: absolute;\r\n  top: -80px;\r\n  left: 0;\r\n  background: #000;\r\n  color: #fff;\r\n  padding: 12px 18px;\r\n  z-index: 1000;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n  transition: transform 0.3s ease;\r\n}\r\n\r\n.skip-to-content:focus {\r\n  top: 0;\r\n  transform: translateY(0);   \r\n}\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -16455,53 +16546,69 @@ __webpack_require__.r(__webpack_exports__);
 
 const DB_NAME = 'berbagi-cerita-db';
 const DB_VERSION = 1;
-const STORE_NAME = 'stories';
+const STORY_STORE = 'stories';
+const BOOKMARK_STORE = 'bookmarks';
 
 const dbPromise = (0,idb__WEBPACK_IMPORTED_MODULE_0__.openDB)(DB_NAME, DB_VERSION, {
   upgrade(db) {
-    if (!db.objectStoreNames.contains(STORE_NAME)) {
-      db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+    if (!db.objectStoreNames.contains(STORY_STORE)) {
+      db.createObjectStore(STORY_STORE, { keyPath: 'id' });
+    }
+    if (!db.objectStoreNames.contains(BOOKMARK_STORE)) {
+      db.createObjectStore(BOOKMARK_STORE, { keyPath: 'id' });
     }
   },
 });
 
 const StoryDB = {
-  async saveStory(story) {
-    if (!story.id) return;
-    const db = await dbPromise;
-    await db.put(STORE_NAME, story);
-  },
-
+  //CACHED STORIES (OFFLINE)
   async putStories(stories) {
     const db = await dbPromise;
-    const tx = db.transaction(STORE_NAME, 'readwrite');
+    const tx = db.transaction(STORY_STORE, 'readwrite');
     for (const story of stories) {
-        if (story.id) {
+      if (story.id) {
         tx.store.put(story);
-        }
+      }
     }
     await tx.done;
-    },
-
+  },
 
   async getAllStories() {
     const db = await dbPromise;
-    return db.getAll(STORE_NAME);
+    return db.getAll(STORY_STORE);
   },
 
-  async getStory(id) {
+  async clearCachedStories() {
     const db = await dbPromise;
-    return db.get(STORE_NAME, id);
+    return db.clear(STORY_STORE);
   },
 
-  async deleteStory(id) {
+  //BOOKMARKS
+
+  async saveBookmark(story) {
+    if (!story.id) return;
     const db = await dbPromise;
-    return db.delete(STORE_NAME, id);
+    await db.put(BOOKMARK_STORE, story);
   },
 
-  async clearAllStories() {
+  async getAllBookmarks() {
     const db = await dbPromise;
-    return db.clear(STORE_NAME);
+    return db.getAll(BOOKMARK_STORE);
+  },
+
+  async getBookmark(id) {
+    const db = await dbPromise;
+    return db.get(BOOKMARK_STORE, id);
+  },
+
+  async deleteBookmark(id) {
+    const db = await dbPromise;
+    return db.delete(BOOKMARK_STORE, id);
+  },
+
+  async clearAllBookmarks() {
+    const db = await dbPromise;
+    return db.clear(BOOKMARK_STORE);
   }
 };
 
@@ -16583,6 +16690,10 @@ class StoryModel {
     this.baseUrl = baseUrl;
   }
 
+  getToken() {
+        return localStorage.getItem('token');
+      }
+
   async fetchStories(token) {
     try {
       const response = await fetch(`${this.baseUrl}/stories`, {
@@ -16641,6 +16752,90 @@ class StoryModel {
 
 /***/ }),
 
+/***/ "./src/presenters/AddStoryPresenter.js":
+/*!*********************************************!*\
+  !*** ./src/presenters/AddStoryPresenter.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class AddStoryPresenter {
+  constructor(view, model, cameraController) {
+    this.view = view;
+    this.model = model;
+    this.camera = cameraController;
+  }
+
+  async init() {
+    this.view.bindStartCamera(this.startCamera.bind(this));
+    this.view.bindTakePhoto(this.takePhoto.bind(this));
+    this.view.bindStopCamera(this.stopCamera.bind(this));
+    this.view.bindFormSubmit(this.addStory.bind(this));
+  }
+
+  async startCamera() {
+    try {
+      await this.camera.start();
+    } catch (error) {
+      this.view.showCameraError?.(error.message || 'Gagal mengakses kamera');
+    }
+  }
+
+  async takePhoto() {
+    try {
+      const imageBlob = await this.camera.capture();
+      if (!imageBlob) {
+        this.view.showCaptureError?.('Gagal mengambil gambar');
+        return;
+      }
+      this.view.showCapturedPhoto?.(imageBlob);
+    } catch (error) {
+      this.view.showCaptureError?.(error.message || 'Gagal mengambil gambar');
+    }
+  }
+
+  stopCamera() {
+    this.camera.stop();
+  }
+
+  handleImageFileChange(file) {
+    this.camera.setImageFile(file);
+  }
+
+  async addStory(formData) {
+    try {
+      const token = this.model.getToken();
+      if (!token) throw new Error('Token tidak ditemukan. Silakan login kembali.');
+
+      const result = await this.model.addStory(formData, token);
+      if (result.error) {
+        this.view.showAddStoryError(result.message);
+        return false;
+      }
+
+      this.view.showAddStorySuccess();
+      return true;
+    } catch (error) {
+      this.view.showAddStoryError(error.message || 'Gagal menambahkan cerita');
+      return false;
+    }
+  }
+
+  destroy() {
+    console.log('[AddStoryPresenter] destroy() dipanggil');
+    this.camera.stop();
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AddStoryPresenter);
+
+
+/***/ }),
+
 /***/ "./src/presenters/StoryPresenter.js":
 /*!******************************************!*\
   !*** ./src/presenters/StoryPresenter.js ***!
@@ -16666,9 +16861,6 @@ class StoryPresenter {
     try {
       // 1. Coba ambil dari API
       const stories = await this.model.fetchStories(this.token);
-
-      // 2. Simpan ke IndexedDB
-      await _data_story_db_js__WEBPACK_IMPORTED_MODULE_0__["default"].putStories(stories);
 
       // 3. Filter untuk lokasi valid
       const validStories = stories.filter(story => story.lat !== null && story.lon !== null);
@@ -16696,50 +16888,6 @@ class StoryPresenter {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StoryPresenter);
 
-
-/***/ }),
-
-/***/ "./src/presenters/addStoryPresenter.js":
-/*!*********************************************!*\
-  !*** ./src/presenters/addStoryPresenter.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-class AddStoryPresenter {
-  constructor(view, model, token = null) {
-    this.view = view;
-    this.model = model;
-    this.token = token || localStorage.getItem("token");
-  }
-
-  async addStory(formData) {
-    try {
-      if (!this.token) {
-        throw new Error('Token tidak ditemukan, silakan login kembali');
-      }
-
-      const result = await this.model.addStory(formData, this.token);
-      
-      if (result.error) {
-        this.view.showAddStoryError(result.message);
-        return false;
-      }
-      
-      this.view.showAddStorySuccess();
-      return true;
-    } catch (error) {
-      this.view.showAddStoryError(error.message || 'Gagal menambahkan cerita');
-      return false;
-    }
-  }
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AddStoryPresenter);
 
 /***/ }),
 
@@ -16792,6 +16940,113 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_styles_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_styles_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_styles_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./src/utils/cameraController.js":
+/*!***************************************!*\
+  !*** ./src/utils/cameraController.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class CameraController {
+  constructor(videoElement, canvasElement, photoPreviewElement, imageInputElement) {
+    this.video = videoElement;
+    this.canvas = canvasElement;
+    this.photoPreview = photoPreviewElement;
+    this.imageInput = imageInputElement;
+    this.stream = null;
+    this.capturedImage = null;
+  }
+
+  async start() {
+    try {
+      this.stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      this.video.srcObject = this.stream;
+
+      await new Promise((resolve) => {
+        this.video.onloadedmetadata = () => resolve();
+      });
+
+      this.video.play();
+      this._toggleCameraUI(true);
+    } catch (err) {
+      throw new Error('Gagal mengakses kamera');
+    }
+  }
+
+  capture() {
+    if (this.video.videoWidth === 0 || this.video.videoHeight === 0) {
+      return null;
+    }
+
+    this.canvas.width = this.video.videoWidth;
+    this.canvas.height = this.video.videoHeight;
+
+    const ctx = this.canvas.getContext('2d');
+    ctx.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
+
+    return this._canvasToBlob();
+  }
+
+  async _canvasToBlob() {
+    return new Promise((resolve, reject) => {
+      this.canvas.toBlob((blob) => {
+        if (!blob) {
+          reject(new Error('Gagal mengambil gambar'));
+          return;
+        }
+
+        this.capturedImage = blob;
+        const imageUrl = URL.createObjectURL(blob);
+        this.photoPreview.src = imageUrl;
+        this.photoPreview.style.display = 'block';
+        this.photoPreview.classList.add('show');
+        this.stop();
+        resolve(blob);
+      }, 'image/png');
+    });
+  }
+
+  stop() {
+    console.log('[CameraController] stop() dipanggil');
+    if (this.stream) {
+      console.log('[CameraController] menghentikan stream...');
+      this.stream.getTracks().forEach((track) => track.stop());
+      this.video.srcObject = null;
+      this.stream = null;
+      this._toggleCameraUI(false);
+    }else{
+      console.log('[CameraController] tidak ada stream untuk dihentikan');
+    }
+  }
+
+  setImageFile(file) {
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      this.photoPreview.src = imageUrl;
+      this.photoPreview.style.display = 'block';
+      this.capturedImage = file;
+    }
+  }
+
+  getImage() {
+    return this.capturedImage;
+  }
+
+  _toggleCameraUI(isOn) {
+    this.video.style.display = isOn ? 'block' : 'none';
+    this.imageInput.style.display = isOn ? 'none' : 'block';
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CameraController);
 
 
 /***/ }),
@@ -16936,6 +17191,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_pages_AddStoryPage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../views/pages/AddStoryPage.js */ "./src/views/pages/AddStoryPage.js");
 /* harmony import */ var _views_pages_LoginPage_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/pages/LoginPage.js */ "./src/views/pages/LoginPage.js");
 /* harmony import */ var _views_pages_RegisterPage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/pages/RegisterPage.js */ "./src/views/pages/RegisterPage.js");
+/* harmony import */ var _views_pages_savedStories_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/pages/savedStories.js */ "./src/views/pages/savedStories.js");
+
 
 
 
@@ -16947,6 +17204,7 @@ const routes = {
   '/add-story': _views_pages_AddStoryPage_js__WEBPACK_IMPORTED_MODULE_1__["default"],
   '/login': _views_pages_LoginPage_js__WEBPACK_IMPORTED_MODULE_2__["default"],
   '/register': _views_pages_RegisterPage_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+  '/saved-book': _views_pages_savedStories_js__WEBPACK_IMPORTED_MODULE_4__["default"],
 };
 
 const Router = {
@@ -17037,6 +17295,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _data_story_db_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/story-db.js */ "./src/data/story-db.js");
+
+
 class StoryView {
   constructor(container, mapId) {
     this.container = container;
@@ -17052,41 +17313,55 @@ class StoryView {
         year: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false, // kalau ingin format 24 jam
+        hour12: false,
       });
+
       const storyElement = document.createElement('div');
       storyElement.classList.add('story-item');
       storyElement.innerHTML = `
         <img src="${story.photoUrl}" alt="Gambar dari ${story.name}" width="200">
         <h3>${story.name}</h3>
         <p>${story.description}</p>
-        <p>Diupload pada ${formatDate}</p>
-        <small>Lat: ${story.lat}, Lng: ${story.lon}</small>
-        <button onclick="deleteStory('${story.id}')">Hapus</button>
-
+        <p>📅 Diupload pada ${formatDate}</p>
+        <p>📍 Lokasi: ${story.lat}, ${story.lon}</p>
+        <button class="bookmark-button" data-id="${story.id}">🔖 Bookmark</button>
       `;
       this.container.appendChild(storyElement);
     });
 
+    // Render peta
     this.renderMap(stories);
+
+    // Tambahkan listener tombol bookmark
+    const bookmarkButtons = this.container.querySelectorAll('.bookmark-button');
+    bookmarkButtons.forEach((btn) => {
+      btn.addEventListener('click', async (event) => {
+        const storyId = event.target.dataset.id;
+        const story = stories.find((s) => s.id === storyId);
+        if (story) {
+          await _data_story_db_js__WEBPACK_IMPORTED_MODULE_0__["default"].saveBookmark(story);
+          alert(`Cerita "${story.name}" disimpan ke bookmark!`);
+        }
+      });
+    });
   }
 
   renderError(errorMessage) {
     this.container.innerHTML = `<p style="color: red;">${errorMessage}</p>`;
   }
 
-    renderMap(stories) {
+  renderMap(stories) {
     const mapContainer = document.getElementById(this.mapId);
     if (!mapContainer) {
       console.error('Elemen peta tidak ditemukan!');
       return;
     }
 
-    const map = L.map(this.mapId).setView([-6.2, 106.8], 5); 
+    const map = L.map(this.mapId).setView([-6.2, 106.8], 5);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
-    }).addTo(map); 
-    
+    }).addTo(map);
+
     stories.forEach((story) => {
       const marker = L.marker([story.lat, story.lon]).addTo(map);
       marker.bindPopup(`<b>${story.name}</b><br>${story.description}`);
@@ -17110,10 +17385,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _presenters_addStoryPresenter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../presenters/addStoryPresenter.js */ "./src/presenters/addStoryPresenter.js");
+/* harmony import */ var _presenters_AddStoryPresenter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../presenters/AddStoryPresenter.js */ "./src/presenters/AddStoryPresenter.js");
 /* harmony import */ var _models_StoryModel_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../models/StoryModel.js */ "./src/models/StoryModel.js");
-/* harmony import */ var _utils_map_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/map.js */ "./src/utils/map.js");
-//add story page (view)
+/* harmony import */ var _utils_cameraController_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/cameraController.js */ "./src/utils/cameraController.js");
+/* harmony import */ var _utils_map_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/map.js */ "./src/utils/map.js");
+
 
 
 
@@ -17128,13 +17404,13 @@ const AddStoryPage = {
           <textarea id="description" required></textarea>
 
           <label>Ambil Gambar:</label>
-          <video id="cameraPreview" autoplay style="display: none;"></video>
-          <canvas id="canvas" style="display: none;"></canvas>
-          <img id="photoPreview" alt="Pratinjau Foto" style="display: none; max-width: 100%;">
+          <video id="cameraPreview" autoplay muted style="display:none;"></video>
+          <canvas id="canvas" style="display:none;"></canvas>
+          <img id="photoPreview" alt="Pratinjau Foto" style="display:none; max-width: 100%;">
 
           <button type="button" id="startCamera">Buka Kamera</button>
-          <button type="button" id="takePhoto" style="display: none;">Ambil Foto</button>
-          <button type="button" id="stopCamera" style="display: none;">Matikan Kamera</button>
+          <button type="button" id="takePhoto" style="display:none;">Ambil Foto</button>
+          <button type="button" id="stopCamera" style="display:none;">Matikan Kamera</button>
 
           <label for="image">Atau Pilih Gambar:</label>
           <input id="image" type="file" accept="image/*">
@@ -17146,7 +17422,6 @@ const AddStoryPage = {
           <label for="lngInput">Longitude:</label>
           <input id="lngInput" type="text" readonly>
 
-
           <button type="submit">Kirim</button>
         </form>
       </section>
@@ -17154,12 +17429,25 @@ const AddStoryPage = {
   },
 
   async afterRender() {
-    // Inisialisasi model dan presenter
-    const model = new _models_StoryModel_js__WEBPACK_IMPORTED_MODULE_1__["default"]('https://story-api.dicoding.dev/v1');
-    this.presenter = new _presenters_addStoryPresenter_js__WEBPACK_IMPORTED_MODULE_0__["default"](this, model);
+    const video = document.getElementById('cameraPreview');
+    const canvas = document.getElementById('canvas');
+    const photoPreview = document.getElementById('photoPreview');
+    const imageInput = document.getElementById('image');
 
-    // Inisialisasi peta
-    (0,_utils_map_js__WEBPACK_IMPORTED_MODULE_2__.initMap)();
+    const model = new _models_StoryModel_js__WEBPACK_IMPORTED_MODULE_1__["default"]('https://story-api.dicoding.dev/v1');
+    const camera = new _utils_cameraController_js__WEBPACK_IMPORTED_MODULE_2__["default"](video, canvas, photoPreview, imageInput);
+
+    this.presenter = new _presenters_AddStoryPresenter_js__WEBPACK_IMPORTED_MODULE_0__["default"](this, model, camera);
+    await this.presenter.init();
+
+    window.currentAddStoryPresenter = this.presenter; 
+    
+    imageInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      this.presenter.handleImageFileChange(file);
+    });
+
+    (0,_utils_map_js__WEBPACK_IMPORTED_MODULE_3__.initMap)();
 
     // Animasi masuk halaman
     const section = document.querySelector('.addStoryPageSection');
@@ -17167,142 +17455,93 @@ const AddStoryPage = {
       requestAnimationFrame(() => {
         section.classList.add('page-enter-active');
       });
-
       setTimeout(() => {
         section.classList.remove('page-enter');
         section.classList.remove('page-enter-active');
       }, 600);
     }
+  },
 
-    // Inisialisasi elemen kamera dan pengambilan gambar
-    const video = document.getElementById('cameraPreview');
-    const canvas = document.getElementById('canvas');
-    const photoPreview = document.getElementById('photoPreview');
-    const startCameraBtn = document.getElementById('startCamera');
-    const takePhotoBtn = document.getElementById('takePhoto');
-    const stopCameraBtn = document.getElementById('stopCamera');
-    const imageInput = document.getElementById('image');
-
-    let stream = null;
-    let capturedImage = null;
-
-    async function startCamera() {
-      try {
-        stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        video.srcObject = stream;
-    
-        await new Promise((resolve) => {
-          video.onloadedmetadata = () => {
-            resolve();
-          };
-        });
-    
-        video.play();
-        video.style.display = 'block';
-        takePhotoBtn.style.display = 'block';
-        stopCameraBtn.style.display = 'block';
-        startCameraBtn.style.display = 'none';
-        imageInput.style.display = 'none';
-      } catch (error) {
-        console.error('Gagal mengakses kamera:', error);
-        alert('Tidak dapat mengakses kamera. Periksa izin atau gunakan browser lain.');
-      }
-    }
-    
-    function takePhoto() {
-      if (video.videoWidth === 0 || video.videoHeight === 0) {
-        alert('Kamera belum siap. Coba beberapa detik lagi.');
-        return;
-      }
-    
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-    
-      const context = canvas.getContext('2d');
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
-    
-      canvas.toBlob((blob) => {
-        if (!blob) {
-          alert('Gagal mengambil gambar. Coba lagi.');
-          return;
-        }
-    
-        capturedImage = blob;
-        const imageUrl = URL.createObjectURL(blob);
-    
-        photoPreview.src = imageUrl;
-        photoPreview.style.display = 'block';
-        photoPreview.classList.add('show');
-      }, 'image/png');
-    
-      stopCamera();
-    }
-
-    function stopCamera() {
-      if (stream) {
-        stream.getTracks().forEach(track => track.stop());
-        video.srcObject = null;
-        video.style.display = 'none';
-        takePhotoBtn.style.display = 'none';
-        stopCameraBtn.style.display = 'none';
-        startCameraBtn.style.display = 'block';
-        imageInput.style.display = 'block';
-      }
-    }
-
-    imageInput.addEventListener('change', () => {
-      const file = imageInput.files[0];
-      if (file) {
-        const imageUrl = URL.createObjectURL(file);
-        photoPreview.src = imageUrl;
-        photoPreview.style.display = 'block';
-        capturedImage = file;
-      }
+  bindStartCamera(handler) {
+    const btn = document.getElementById('startCamera');
+    btn.addEventListener('click', () => {
+      handler();
+      btn.style.display = 'none';
+      document.getElementById('takePhoto').style.display = 'inline-block';
+      document.getElementById('stopCamera').style.display = 'inline-block';
     });
+  },
 
-    document.getElementById('storyForm').addEventListener('submit', async (event) => {
+  bindTakePhoto(handler) {
+    const btn = document.getElementById('takePhoto');
+    btn.addEventListener('click', async () => {
+      await handler();
+      btn.style.display = 'none';
+    });
+  },
+
+  bindStopCamera(handler) {
+    const btn = document.getElementById('stopCamera');
+    btn.addEventListener('click', () => {
+      handler();
+      btn.style.display = 'none';
+      document.getElementById('startCamera').style.display = 'inline-block';
+      document.getElementById('takePhoto').style.display = 'none';
+    });
+  },
+
+  bindFormSubmit(handler) {
+    const form = document.getElementById('storyForm');
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
-      const location = (0,_utils_map_js__WEBPACK_IMPORTED_MODULE_2__.getSelectedLocation)();
+      const location = (0,_utils_map_js__WEBPACK_IMPORTED_MODULE_3__.getSelectedLocation)();
       if (!location || !location.lat || !location.lng) {
         alert('Silakan pilih lokasi di peta terlebih dahulu.');
         return;
       }
 
-      if (!capturedImage) {
+      const image = this.presenter.camera.getImage();
+      if (!image) {
         alert('Silakan ambil atau pilih gambar terlebih dahulu.');
         return;
       }
 
       const formData = new FormData();
       formData.append('description', document.getElementById('description').value);
-      formData.append('photo', capturedImage, 'photo.png');
+      formData.append('photo', image, 'photo.png');
       formData.append('lat', location.lat);
       formData.append('lon', location.lng);
 
-      // Sekarang memanggil presenter alih-alih model langsung
-      const success = await this.presenter.addStory(formData);
+      const success = await handler(formData);
+      this.presenter.destroy();
       if (success) {
+        console.log('[add.js] handler() selesai, success =', success);
         window.location.hash = '#/';
       }
     });
-
-    startCameraBtn.addEventListener('click', startCamera);
-    takePhotoBtn.addEventListener('click', takePhoto);
-    stopCameraBtn.addEventListener('click', stopCamera);
   },
 
-  // Metode callback untuk presenter
   showAddStorySuccess() {
-    alert('Cerita berhasil ditambahkan!');
-  },
+        alert('Cerita berhasil ditambahkan!');
+    },
 
-  showAddStoryError(message) {
-    alert(`Gagal menambahkan cerita: ${message}`);
-    console.error('Error:', message);
-  }
+    showAddStoryError(message) {
+        alert(`Gagal menambahkan cerita: ${message}`);
+    },
+
+    showCapturedPhoto(blob) {
+        console.log('Foto berhasil diambil', blob);
+    },
+
+    showCameraError(message) {
+        alert(`Kamera error: ${message}`);
+    },
+
+    showCaptureError(message) {
+        alert(`Gagal ambil gambar: ${message}`);
+    }
 };
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AddStoryPage);
 
 
@@ -17328,19 +17567,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const HomePage = {
   async render() {
     return `
-      <section id="home" class="page-enter">
-        <h2>Daftar Cerita</h2>
-        <div id="storyContainer"></div>
-        <div id="map" style="height: 400px;"></div>
-      </section>
+    <section id="home" class="page-enter">
+      <h2 class="home-title">Daftar Cerita</h2>
+      
+      <div class="story-header">
+        <button id="addStoryButton" class="add-story-button">➕ Add Story</button>
+      </div>
+
+      <div id="storyContainer" class="story-grid"></div>
+
+      <div id="map" style="height: 400px;"></div>
+    </section>
     `;
   },
 
   async afterRender() {
+    document.getElementById('addStoryButton').addEventListener('click', () => {
+      window.location.hash = '#/add-story'; // sesuaikan jika rutenya lain
+    });
+
     const token = localStorage.getItem("token");
   
     const section = document.getElementById('home');
@@ -17535,6 +17783,77 @@ const RegisterPage = {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RegisterPage);
 
 
+/***/ }),
+
+/***/ "./src/views/pages/savedStories.js":
+/*!*****************************************!*\
+  !*** ./src/views/pages/savedStories.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _data_story_db__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../data/story-db */ "./src/data/story-db.js");
+
+
+const SavedStoriesPage = {
+  async render() {
+    return `
+      <section class="savedStoriesSection">
+        <h2>Saved Stories</h2>
+        <div id="savedStoriesList"></div>
+      </section>
+    `;
+  },
+
+  async afterRender() {
+    const stories = await _data_story_db__WEBPACK_IMPORTED_MODULE_0__["default"].getAllBookmarks();
+    const listElement = document.getElementById('savedStoriesList');
+
+    if (stories.length === 0) {
+      listElement.innerHTML = '<p>Belum ada cerita yang disimpan.</p>';
+      return;
+    }
+
+    listElement.innerHTML = '';
+
+    stories.forEach((story) => {
+      const formatDate = new Date(story.createdAt).toLocaleString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      });
+
+      const storyElement = document.createElement('div');
+      storyElement.classList.add('story-item');
+      storyElement.innerHTML = `
+        <img src="${story.photoUrl}" alt="Gambar dari ${story.name}" width="200">
+        <h3>${story.name}</h3>
+        <p>${story.description}</p>
+        <p>📅 Diupload pada ${formatDate}</p>
+        <p>📍 Lokasi: ${story.lat}, ${story.lon}</p>
+        <button class="delete-button">🗑️ Delete</button>
+      `;
+
+      storyElement.querySelector('.delete-button').addEventListener('click', async () => {
+        await _data_story_db__WEBPACK_IMPORTED_MODULE_0__["default"].deleteBookmark(story.id);
+        this.afterRender(); // Refresh daftar setelah dihapus
+      });
+
+      listElement.appendChild(storyElement);
+    });
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SavedStoriesPage);
+
+
 /***/ })
 
 /******/ 	});
@@ -17691,6 +18010,14 @@ __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener('DOMContentLoaded', () => {
   _utils_router_js__WEBPACK_IMPORTED_MODULE_1__["default"].init();
+
+    window.addEventListener('hashchange', () => {
+    if (window.currentAddStoryPresenter) {
+      console.log('[GLOBAL] hashchange: Mematikan kamera');
+      window.currentAddStoryPresenter.destroy();
+      window.currentAddStoryPresenter = null;
+    }
+  });
 });
 
 if ('serviceWorker' in navigator) {

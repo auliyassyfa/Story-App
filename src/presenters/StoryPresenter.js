@@ -12,9 +12,6 @@ class StoryPresenter {
       // 1. Coba ambil dari API
       const stories = await this.model.fetchStories(this.token);
 
-      // 2. Simpan ke IndexedDB
-      await StoryDB.putStories(stories);
-
       // 3. Filter untuk lokasi valid
       const validStories = stories.filter(story => story.lat !== null && story.lon !== null);
       console.log('Data cerita setelah difilter:', validStories);
